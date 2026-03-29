@@ -1,2 +1,2 @@
 # Jira-Git
-Making life easy . 
+Making life easy. To Good to handle .
