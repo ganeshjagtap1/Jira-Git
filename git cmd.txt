@@ -1,0 +1,16 @@
+git config --global user.name "The Name Itself"
+git config --global user.email "theexwriter79@gmail.com"
+git config --list
+
+
+git clone "https://github.com/ganeshjagtap1/Jira-Git.git" : use to clone the repo
+git clone  -b "https://github.com/ganeshjagtap1/Jira-Git.git" : use to clone from branch
+
+
+git init <repo-name>
+
+git status : to check the status in local which file had changes done
+
+git pull: to fetch the code form git hub to ur local 
+
+git fetch: to fetch the remote repo
