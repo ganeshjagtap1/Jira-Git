@@ -1,0 +1,231 @@
+<!-- ============================================
+     PAGE 5: FIRST PREMIUM RECEIPT (FINAL FIXED)
+     ============================================ -->
+
+<!doctype html>
+<html lang="en">
+  <style>
+    /* ===== RECEIPT PAGE (REUSABLE) ===== */
+
+    .receipt-header {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .receipt-logo {
+      height: 60px;
+      object-fit: contain;
+    }
+
+    .receipt-banner {
+      background: #000;
+      color: #fff;
+      padding: 6px 20px;
+      border-radius: 25px;
+      text-align: center;
+      width: 60%;
+      margin: auto;
+      font-size: 13px;
+    }
+
+    .receipt-top {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+    }
+
+    .receipt-meta {
+      text-align: right;
+      font-size: 12px;
+    }
+
+    .receipt-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    .receipt-table td {
+      border: 1px solid #000;
+      padding: 6px;
+    }
+
+    .receipt-table .label {
+      font-weight: 600;
+      width: 50%;
+    }
+
+    .receipt-table .value {
+      text-align: right;
+    }
+
+    .header-row td {
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .receipt-note {
+      font-size: 10px;
+      margin-top: 15px;
+    }
+
+    .receipt-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      font-size: 11px;
+    }
+  </style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <section class="page-section">
+      <!-- HEADER -->
+      <div class="receipt-header">
+        <img
+          src="C:\MRS\Code\Pnb-metlife-logo-PNG-1.png"
+          class="receipt-logo"
+        />
+
+        <div class="receipt-banner">
+          First Premium Receipt &nbsp;&nbsp;/&nbsp;&nbsp; प्रथम प्रीमियम रसीद
+        </div>
+      </div>
+
+      <!-- TOP SECTION -->
+      <div class="receipt-top">
+        <div class="receipt-address">
+          Mr. ${customerName}<br />
+          ${address}
+        </div>
+
+        <div class="receipt-meta">
+          <div><strong>Date</strong> : ${issueDate}</div>
+          <div><strong>Policy Number</strong> : ${policyNumber}</div>
+        </div>
+      </div>
+
+      <p class="p-greeting">Dear Mr. ${customerName}</p>
+
+      <p class="thank-you-message">
+        Thank you for choosing PNB MetLife as your insurance partner.
+      </p>
+
+      <!-- MAIN TABLE -->
+      <table class="receipt-table">
+        <tr>
+          <td class="label">Policy Number</td>
+          <td class="value">${policyNumber}</td>
+        </tr>
+        <tr>
+          <td class="label">Name of Life Insured</td>
+          <td class="value">${customerName}</td>
+        </tr>
+        <tr>
+          <td class="label">Plan</td>
+          <td class="value">${plan}</td>
+        </tr>
+        <tr>
+          <td class="label">Policy Term</td>
+          <td class="value">${policyTerm} Years</td>
+        </tr>
+        <tr>
+          <td class="label">Premium Paying Term</td>
+          <td class="value">${premiumPayingTerm} Years</td>
+        </tr>
+      </table>
+
+      <!-- COVERAGE TABLE -->
+      <table class="receipt-table mt-sm">
+        <tr class="header-row">
+          <td>Coverage</td>
+          <td>Sum Assured / Face Amount</td>
+          <td>Installment Premium</td>
+        </tr>
+
+        <tr>
+          <td>Base Policy</td>
+          <td class="value">₹ ${sumAssured}</td>
+          <td class="value">₹ ${installmentPremium}</td>
+        </tr>
+
+        <tr>
+          <td>Accidental Death Benefit Rider</td>
+          <td class="value">₹ ${accidentalDeathBenefit}</td>
+          <td class="value">₹ ${accidentalDeathBenefitPremium}</td>
+        </tr>
+
+        <tr>
+          <td>Critical Illness Rider</td>
+          <td class="value">₹ 0.00</td>
+          <td class="value">₹ 0.00</td>
+        </tr>
+
+        <tr>
+          <td>Term Rider</td>
+          <td class="value">₹ 0.00</td>
+          <td class="value">₹ 0.00</td>
+        </tr>
+
+        <tr>
+          <td>Waiver Of Premium Rider</td>
+          <td class="value">₹ 0.00</td>
+          <td class="value">₹ 0.00</td>
+        </tr>
+      </table>
+
+      <!-- SUMMARY TABLE -->
+      <table class="receipt-table mt-sm">
+        <tr>
+          <td class="label">Total Premium</td>
+          <td class="value">₹ ${totalInstallmentPremium}</td>
+        </tr>
+        <tr>
+          <td class="label">Service Tax / Add Tax</td>
+          <td class="value">₹ 0.00</td>
+        </tr>
+        <tr>
+          <td class="label">Total Amount Payable</td>
+          <td class="value">₹ ${totalInstallmentPremium}</td>
+        </tr>
+        <tr>
+          <td class="label">Initial Deposit Paid</td>
+          <td class="value">₹ ${totalInstallmentPremium}</td>
+        </tr>
+        <tr>
+          <td class="label">Balance in Policy Deposit</td>
+          <td class="value">₹ 0.00</td>
+        </tr>
+        <tr>
+          <td class="label">Effective Date</td>
+          <td class="value">${issueDate}</td>
+        </tr>
+        <tr>
+          <td class="label">Premium Frequency</td>
+          <td class="value">${frequency}</td>
+        </tr>
+        <tr>
+          <td class="label">Next Due Date</td>
+          <td class="value">${nextDueDate}</td>
+        </tr>
+      </table>
+
+      <!-- FOOTER NOTE -->
+      <p class="receipt-note">
+        This is a computer generated receipt and does not require signature.
+        Premium paid is eligible for tax benefits under prevailing laws.
+      </p>
+
+      <!-- FOOTER -->
+      <div class="receipt-footer">
+        <div>Call: 1800-425-6969</div>
+        <div>Email: indiaservice@pnbmetlife.co.in</div>
+        <div>Visit: www.pnbmetlife.com</div>
+      </div>
+    </section>
+  </body>
+</html>
